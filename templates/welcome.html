@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maderauchiha - Bot is Live</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Full background image */
+        .bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: url('https://motionbgs.com/media/7434/madara-uchiha-naruto.3840x2160.jpg');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            z-index: 0;
+        }
+
+        /* Dark overlay */
+        .bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+        }
+
+        .container {
+            text-align: center;
+            z-index: 1;
+            position: relative;
+            padding: 30px 20px;
+        }
+
+        @keyframes glitch {
+            0%   { text-shadow: 2px 2px #ff4500, -2px -2px #8b0000; }
+            20%  { text-shadow: 2px -2px #ff0000, -2px 2px #ff4500; }
+            40%  { text-shadow: -2px 2px #8b0000, 2px -2px #ff0000; }
+            60%  { text-shadow: 2px 2px #ff0000, -2px -2px #ff4500; }
+            80%  { text-shadow: -2px -2px #ff4500, 2px 2px #8b0000; }
+            100% { text-shadow: 2px 2px #ff4500, -2px -2px #8b0000; }
+        }
+
+        @keyframes gradientShift {
+            0%   { background-position: 0% 50%; }
+            50%  { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0.6; }
+        }
+
+        .maderauchiha {
+            font-size: 3.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            background: linear-gradient(90deg, #ff6a00, #ee0979, #ff4500, #8b0000, #ff6a00);
+            background-size: 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glitch 1.5s infinite, gradientShift 4s ease infinite, fadeInUp 1s ease forwards;
+        }
+
+        .sharingan {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 10px #ff2200);
+        }
+
+        .bot-status {
+            margin-top: 12px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: #ff4500;
+            text-shadow: 0 0 10px #ff4500, 0 0 25px #ff2200;
+            animation: fadeInUp 1.2s ease forwards, pulse 3s ease-in-out infinite;
+        }
+
+        .subtitle {
+            margin-top: 8px;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: rgba(255, 200, 150, 0.75);
+            animation: fadeInUp 1.4s ease forwards;
+        }
+
+        .actions {
+            margin-top: 28px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeInUp 1.6s ease forwards;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 28px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: white;
+            text-transform: uppercase;
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #8b0000, #ff4500);
+            box-shadow: 0 4px 20px rgba(255, 69, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            border: 1px solid rgba(255, 100, 0, 0.3);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(255, 69, 0, 0.7);
+            background: linear-gradient(90deg, #ff4500, #8b0000);
+        }
+
+        .btn.secondary {
+            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 100, 0, 0.4);
+        }
+
+        .btn.secondary:hover {
+            background: linear-gradient(90deg, #16213e, #1a1a2e);
+            box-shadow: 0 8px 30px rgba(255, 69, 0, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .maderauchiha { font-size: 2.2rem; letter-spacing: 4px; }
+            .bot-status { font-size: 1rem; }
+            .btn { padding: 11px 22px; font-size: 0.85rem; }
+        }
+
+        @media (min-width: 1200px) {
+            .maderauchiha { font-size: 4.5rem; }
+            .bot-status { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg"></div>
+
+    <div class="container">
+        <div class="sharingan">🔴</div>
+        <div class="maderauchiha">Maderauchiha</div>
+        <div class="bot-status">⚡ Bot is Live ⚡</div>
+        <div class="subtitle">The Strongest · The Uchiha · The Legend</div>
+        <div class="actions">
+            <a href="https://t.me/+wKieIoHXmFg5NWM9" class="btn">Join Channel</a>
+            <a href="https://github.com/devgaganin" class="btn secondary">GitHub</a>
+        </div>
+    </div>
+
+</body>
+</html>

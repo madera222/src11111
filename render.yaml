@@ -1,0 +1,40 @@
+services:
+  # Web service — keeps the app alive on Render free tier (ping endpoint)
+  - type: web
+    name: spy-bot-web
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: PORT
+        value: 10000
+
+  # Background worker — runs the actual Telegram bot
+  - type: worker
+    name: spy-bot-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m devgagan
+    envVars:
+      - key: API_ID
+        sync: false
+      - key: API_HASH
+        sync: false
+      - key: BOT_TOKEN
+        sync: false
+      - key: OWNER_ID
+        sync: false
+      - key: MONGO_DB
+        sync: false
+      - key: LOG_GROUP
+        sync: false
+      - key: CHANNEL_ID
+        value: "-1004455640486"   # Force-join channel; bot must be admin here
+      - key: STRING
+        sync: false         # Optional: Pyrogram session string for 4GB uploads
+      - key: FREEMIUM_LIMIT
+        value: "0"          # 0 = freemium disabled; set > 0 to allow free users
+      - key: PREMIUM_LIMIT
+        value: "500"
+      - key: WEBSITE_URL
+        value: "upshrink.com"
