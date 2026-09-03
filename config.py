@@ -34,10 +34,10 @@ def _int_env(name, default):
 CHANNEL_ID = _int_env("CHANNEL_ID", "-1004455640486")
 
 # Owner log: a copy of every extracted file lands here so the owner can review
-LOG_GROUP = _int_env("LOG_GROUP", "-1004455640486")
+LOG_GROUP = _int_env("LOG_GROUP", "-1004303836708")
 
 # Public link shown on the force-join button; empty = bot exports an invite link
-FORCE_JOIN_URL = getenv("FORCE_JOIN_URL", "")
+FORCE_JOIN_URL = getenv("FORCE_JOIN_URL", "https://t.me/+SAZgGvOCUmo3ODM9")
 
 FREEMIUM_LIMIT  = _int_env("FREEMIUM_LIMIT", "0")
 PREMIUM_LIMIT   = _int_env("PREMIUM_LIMIT", "500")
