@@ -17,7 +17,7 @@ YTUB_COOKIES = """
 # Fixed Direct Values
 API_ID       = "30978477"
 API_HASH     = "4d908be0390fb1f4fd079506af5b1971"
-BOT_TOKEN    = "8328067743:AAHKkiZ6eduJ_yZ1c40dFiSKKIBUq8MeFCs4"  # અહીં બોટફાધર માંથી મળેલો ટોકન મૂકો
+BOT_TOKEN    = "8224794483:AAE41B21S_xsYHuNXpeeJZJHR5hiWO-4kTM"  # અહીં બોટફાધર માંથી મળેલો ટોકન મૂકો
 OWNER_ID     = [5575032909]
 MONGO_DB     = "mongodb+srv://abcdef95108_db_user:lzSM3yBBKPsrgYUQ@cluster0.r2pwqnt.mongodb.net/?appName=Cluster0"
 
